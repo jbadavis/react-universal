@@ -33,7 +33,10 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader?localIdentName=[name]__[local]--[hash:base64:5]', 'sass-loader']
+          use: [
+            'css-loader?localIdentName=[name]__[local]--[hash:base64:5]',
+            'sass-loader'
+          ]
         })
       }
     ],
