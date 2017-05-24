@@ -4,7 +4,6 @@ import express from 'express';
 import App from './app/App';
 
 const app = express();
-
 const port = 8080;
 
 app.set('view engine', 'ejs');
