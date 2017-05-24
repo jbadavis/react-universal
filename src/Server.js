@@ -14,4 +14,4 @@ app.get('*', (req, res) => {
   return res.render('index', { markup });
 });
 
-app.listen(3000, () => console.log('Listening on 3000'));
+app.listen(8080, () => console.log('Listening on 3000'));
