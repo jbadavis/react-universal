@@ -9,12 +9,12 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist/public'),
     filename: '[name].bundle.js',
     libraryTarget: 'umd'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './src'),
+    contentBase: path.resolve(__dirname, './src/views'),
   },
   module: {
     rules: [

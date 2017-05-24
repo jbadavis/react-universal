@@ -1,11 +1,12 @@
 {
-  "name": "react-basic-universal",
+  "name": "react-simple-universal",
   "version": "1.0.0",
   "description": "",
   "main": "",
   "scripts": {
-    "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-  "server": "node_modules/webpack/bin/webpack.js -p && node_modules/babel-cli/bin/babel-node.js src/Server.js"
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build:server": "./node_modules/babel-cli/bin/babel.js src -d dist --ignore Client.js",
+    "start:server": "./node_modules/webpack/bin/webpack.js -p && npm run build:server && node dist/Server.js"
   },
   "author": "jbadavis",
   "license": "ISC",
