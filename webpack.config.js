@@ -1,12 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
     app: './Client.js',
   },
+
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
@@ -22,28 +23,27 @@ module.exports = {
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] }
+          options: {
+            babelrc: false,
+            presets: ['es2015', 'react', 'stage-0']
+          }
         }],
       },
       {
-        test: /\.(sass|scss|css)$/,
-        use: [{
-          loader: "style-loader"
-        },
-        {
-          loader: "css-loader",
-          options: {
-            module: true,
-            localIdentName: '[name]__[local]--[hash:base64:5]',
-            importLoaders: 1,
-          }
-        },
-        {
-          loader: "sass-loader"
-        }]
-      },
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader?localIdentName=[name]__[local]--[hash:base64:5]', 'sass-loader']
+        })
+      }
     ],
   },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: 'styles.bundle.css',
+      allChunks: true
+    })
+  ],
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules']
   },
