@@ -35,7 +35,7 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader?localIdentName=[name]__[local]',
+            'css-loader?localIdentName=[name]__[local]--[hash:base64:5]',
             'sass-loader'
           ]
         })
@@ -47,10 +47,7 @@ module.exports = {
       filename: 'styles.bundle.css',
       allChunks: true
     }),
-    new CopyWebpackPlugin([
-      { from: 'views/index.html' },
-      { from : 'imgs', to: 'imgs' }
-    ])
+    new CopyWebpackPlugin([{ from : 'imgs', to: 'imgs' }])
   ],
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules']
