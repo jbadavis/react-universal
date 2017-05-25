@@ -9,7 +9,7 @@ const port = 8080;
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
-app.use('/public', express.static('./dist/public'));
+app.use('/', express.static('./dist/public'));
 
 app.get('*', (req, res) => {
   const markup = renderToString(<App/>);

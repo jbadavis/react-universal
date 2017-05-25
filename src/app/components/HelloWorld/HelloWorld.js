@@ -19,9 +19,12 @@ class HelloWorld extends React.Component {
 
   render() {
     return (
-      <div className={ styles.helloWorld }>
-        <h1>{ this.state.text }</h1>
-        <button onClick={ () => this.handleClick() }>Click me</button>
+      <div className={styles.helloWorld}>
+        <h1>{this.state.text}</h1>
+        <button onClick={() => this.handleClick()}>Click me</button>
+        <div>
+          <img src='/imgs/toaster.svg' />
+        </div>
       </div>
     );
   }

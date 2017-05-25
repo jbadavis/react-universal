@@ -4,7 +4,7 @@
     [
       "css-modules-transform", {
         "extensions": [".css", ".scss", ".less"],
-        "generateScopedName": "[name]__[local]--[hash:base64:5]"
+        "generateScopedName": "[name]__[local]"
       }
     ]
   ]

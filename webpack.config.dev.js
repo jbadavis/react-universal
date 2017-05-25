@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
@@ -14,7 +15,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './src/views'),
+    contentBase: path.resolve(__dirname, './dist/public'),
   },
   module: {
     rules: [
@@ -45,7 +46,11 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'styles.bundle.css',
       allChunks: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'views/index.html' },
+      { from : 'imgs', to: 'imgs' }
+    ])
   ],
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules']

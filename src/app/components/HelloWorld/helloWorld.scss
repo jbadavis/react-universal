@@ -1,10 +1,14 @@
 :local {
   .helloWorld {
-    background: black;
     color: white;
 
-    & h1 {
+    h1 {
+      background: black;
       color: red;
+    }
+
+    img {
+      width: 50px;
     }
   }
 }
