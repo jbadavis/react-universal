@@ -35,7 +35,7 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader?localIdentName=[name]__[local]--[hash:base64:5]',
+            'css-loader?localIdentName=[name]__[local]',
             'sass-loader'
           ]
         })
