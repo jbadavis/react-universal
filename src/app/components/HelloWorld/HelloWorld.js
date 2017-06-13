@@ -7,20 +7,20 @@ class HelloWorld extends React.Component {
     super(props);
 
     this.state = {
-      text: 'Hello, World!'
+      text: 'Hello'
     };
   };
 
   handleClick() {
     this.setState({
-      text: 'Goodbye, World!'
+      text: this.state.text === 'Hello' ? 'Goodbye' : 'Hello'
     });
   }
 
   render() {
     return (
       <div className={styles.helloWorld}>
-        <h1>{this.state.text}</h1>
+        <h1>{this.state.text}, World!</h1>
         <button onClick={() => this.handleClick()}>Click me</button>
         <div>
           <img src='/imgs/toaster.svg' />
