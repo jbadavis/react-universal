@@ -31,22 +31,25 @@ module.exports = {
         }],
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader?localIdentName=[name]__[local]--[hash:base64:5]',
-            'sass-loader'
-          ]
-        })
-      }
+        test: /\.(sass|scss|css)$/,
+        use: [{
+          loader: "style-loader"
+        },
+        {
+          loader: "css-loader",
+          options: {
+            module: true,
+            localIdentName: '[name]__[local]--[hash:base64:5]',
+            importLoaders: 1,
+          }
+        },
+        {
+          loader: "sass-loader"
+        }]
+      },
     ],
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename: 'styles.bundle.css',
-      allChunks: true
-    }),
     new CopyWebpackPlugin([
       { from: 'views/index.html' },
       { from : 'imgs', to: 'imgs' }
