@@ -39,6 +39,12 @@ module.exports = {
             'sass-loader'
           ]
         })
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        use: [{
+          loader: 'file-loader?name=/images/[name].[ext]'
+        }]
       }
     ],
   },
@@ -47,7 +53,6 @@ module.exports = {
       filename: 'styles.bundle.css',
       allChunks: true
     }),
-    new CopyWebpackPlugin([{ from : 'imgs', to: 'imgs' }])
   ],
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules']

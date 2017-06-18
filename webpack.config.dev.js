@@ -47,12 +47,17 @@ module.exports = {
           loader: "sass-loader"
         }]
       },
+      {
+        test: /\.(jpg|png|svg)$/,
+        use: [{
+          loader: 'file-loader?name=/images/[name].[ext]&outputPath=dist/static/images/'
+        }]
+      }
     ],
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'views/index.html' },
-      { from : 'imgs', to: 'imgs' }
+      { from: 'views/index.html' }
     ])
   ],
   resolve: {
