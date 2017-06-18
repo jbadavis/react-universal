@@ -5,9 +5,9 @@
   "main": "",
   "scripts": {
     "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --config webpack/webpack.config.dev.js --content-base dist/public",
-    "build:webpack": "node_modules/webpack/bin/webpack.js --config webpack/webpack.config.prod.js",
+    "build:client": "node_modules/webpack/bin/webpack.js --config webpack/webpack.config.prod.js",
     "build:server": "node_modules/babel-cli/bin/babel.js src -d dist --ignore Client.js",
-    "build:prod": "npm run build:webpack && npm run build:server",
+    "build:prod": "npm run build:client && npm run build:server",
     "start:prod": "node dist/Server.js",
     "start:server": "npm run build:prod && npm run start:prod"
   },
