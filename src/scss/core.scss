@@ -1,0 +1,16 @@
+@import "./libraries/libraries";
+@import "./typography/typography";
+
+// The Babel Webpack build requires the use of the commonjs2 library target.
+// It requires something be defined here otherwise an empty object is returned.
+// This causes the production build to break.
+:local {
+  .body {
+    background: white;
+    color: black;
+  }
+}
+
+body {
+  @extend .body;
+}

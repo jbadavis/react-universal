@@ -4,18 +4,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  context: path.resolve(__dirname, './src'),
+  context: path.resolve(__dirname, '../src'),
   entry: {
     app: './Client.js',
   },
 
   output: {
-    path: path.resolve(__dirname, './dist/public'),
+    path: path.resolve(__dirname, '../dist/public'),
     filename: '[name].bundle.js',
     libraryTarget: 'umd'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist/public'),
+    contentBase: path.resolve(__dirname, '../dist/public'),
   },
   module: {
     rules: [
@@ -39,6 +39,12 @@ module.exports = {
             'sass-loader'
           ]
         })
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        use: [{
+          loader: 'file-loader?name=/images/[name].[ext]'
+        }]
       }
     ],
   },
@@ -47,9 +53,8 @@ module.exports = {
       filename: 'styles.bundle.css',
       allChunks: true
     }),
-    new CopyWebpackPlugin([{ from : 'imgs', to: 'imgs' }])
   ],
   resolve: {
-    modules: [path.resolve(__dirname, './src'), 'node_modules']
+    modules: [path.resolve(__dirname, '../src'), 'node_modules']
   },
 };

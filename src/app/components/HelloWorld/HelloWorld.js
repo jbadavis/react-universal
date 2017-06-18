@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './helloWorld.scss';
+import url from '../../../images/toaster.svg';
 
 class HelloWorld extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class HelloWorld extends React.Component {
         <h1>{this.state.text}, World!</h1>
         <button onClick={() => this.handleClick()}>Click me</button>
         <div>
-          <img src='/imgs/toaster.svg' />
+          <img src={url} />
         </div>
       </div>
     );
