@@ -1,0 +1,15 @@
+@import "./libraries/libraries";
+@import "./typography/typography";
+
+// The Babel Webpack build requires that something be defined here
+// otherwise an empty object is returned.
+:local {
+  .body {
+    background: white;
+    color: black;
+  }
+}
+
+body {
+  @extend .body;
+}

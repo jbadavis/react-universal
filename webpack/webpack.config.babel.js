@@ -1,25 +1,20 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   output: {
     libraryTarget: 'commonjs2',
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.(sass|scss|css)$/,
-        use: [{
-          loader: "style-loader"
-        },
-        {
-          loader: "css-loader",
-          options: {
-            module: true,
-            localIdentName: '[name]__[local]',
-            importLoaders: 1,
-          }
-        },
-        {
-          loader: "sass-loader"
-        }]
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader?localIdentName=[name]__[local]',
+            'sass-loader'
+          ]
+        })
       },
       {
         test: /\.(jpg|png|svg)$/,
@@ -29,4 +24,7 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new ExtractTextPlugin({ disable: true }),
+  ],
 };
