@@ -4,18 +4,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  context: path.resolve(__dirname, './src'),
+  context: path.resolve(__dirname, '../src'),
   entry: {
     app: './Client.js',
   },
 
   output: {
-    path: path.resolve(__dirname, './dist/public'),
+    path: path.resolve(__dirname, '../dist/public'),
     filename: '[name].bundle.js',
     libraryTarget: 'umd'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist/public'),
+    contentBase: path.resolve(__dirname, '../dist/public'),
   },
   module: {
     rules: [
@@ -50,17 +50,15 @@ module.exports = {
       {
         test: /\.(jpg|png|svg)$/,
         use: [{
-          loader: 'file-loader?name=/images/[name].[ext]&outputPath=dist/static/images/'
+          loader: 'file-loader?name=/images/[name].[ext]&outputPath=./dist/static/images/'
         }]
       }
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: 'views/index.html' }
-    ])
+    new CopyWebpackPlugin([{ from: 'views/index.html' }])
   ],
   resolve: {
-    modules: [path.resolve(__dirname, './src'), 'node_modules']
+    modules: [path.resolve(__dirname, '../src'), 'node_modules']
   },
 };
