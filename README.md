@@ -6,6 +6,8 @@ I've attempted to keep it as straightforward as possible.
 
 ## Getting Started
 
+#### Install
+
 `npm i`
 
 #### Development
