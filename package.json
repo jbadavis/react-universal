@@ -4,12 +4,13 @@
   "description": "",
   "main": "",
   "scripts": {
+    "dev": "npm start",
     "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --config webpack/webpack.config.dev.js",
-    "build:client": "node_modules/webpack/bin/webpack.js --config webpack/webpack.config.prod.js",
+    "build:client": "node_modules/webpack/bin/webpack.js -p --config webpack/webpack.config.prod.js",
     "build:server": "node_modules/babel-cli/bin/babel.js src -d dist --ignore Client.js",
+    "start:server": "node dist/Server.js",
     "build:prod": "npm run build:client && npm run build:server",
-    "start:prod": "node dist/Server.js",
-    "start:server": "npm run build:prod && npm run start:prod"
+    "prod": "npm run build:prod && npm run start:server"
   },
   "author": "jbadavis",
   "license": "ISC",
@@ -20,7 +21,6 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
-    "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-plugin-transform-react-jsx": "^6.23.0",
     "babel-plugin-webpack-loaders": "^0.9.0",
     "babel-preset-es2015": "^6.18.0",
