@@ -56,7 +56,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([{ from: 'views/index.html' }])
+    new CopyWebpackPlugin([{ from: 'views/index.html' }]),
+    new webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
     modules: [path.resolve(__dirname, '../src'), 'node_modules']

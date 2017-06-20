@@ -53,6 +53,7 @@ module.exports = {
       filename: 'styles.bundle.css',
       allChunks: true
     }),
+    new webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
     modules: [path.resolve(__dirname, '../src'), 'node_modules']
