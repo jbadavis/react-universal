@@ -14,9 +14,6 @@ module.exports = {
     filename: '[name].bundle.js',
     libraryTarget: 'umd'
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, '../dist/public'),
-  },
   module: {
     rules: [
       {
