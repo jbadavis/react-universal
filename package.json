@@ -38,6 +38,6 @@
     "react-dom": "^15.4.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "webpack": "^2.3.2"
+    "webpack": "^3.0.0"
   }
 }
