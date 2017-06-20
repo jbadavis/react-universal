@@ -5,11 +5,12 @@
   "main": "",
   "scripts": {
     "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --config webpack/webpack.config.dev.js --content-base dist/public",
-    "build:client": "node_modules/webpack/bin/webpack.js --config webpack/webpack.config.prod.js",
+    "dev": "npm start",
+    "build:client": "node_modules/webpack/bin/webpack.js -p --config webpack/webpack.config.prod.js",
     "build:server": "node_modules/babel-cli/bin/babel.js src -d dist --ignore Client.js",
+    "start:server": "node dist/Server.js",
     "build:prod": "npm run build:client && npm run build:server",
-    "start:prod": "node dist/Server.js",
-    "start:server": "npm run build:prod && npm run start:prod"
+    "prod": "npm run build:prod && npm run start:server"
   },
   "author": "jbadavis",
   "license": "ISC",
