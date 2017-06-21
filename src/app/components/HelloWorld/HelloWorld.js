@@ -12,7 +12,7 @@ class HelloWorld extends React.Component {
     };
   };
 
-  handleClick() {
+  handleClick = () => {
     this.setState({
       text: this.state.text === 'Hello' ? 'Goodbye' : 'Hello'
     });
@@ -22,7 +22,7 @@ class HelloWorld extends React.Component {
     return (
       <div className={styles.helloWorld}>
         <h1>{this.state.text}, World!</h1>
-        <button onClick={() => this.handleClick()}>Click me</button>
+        <button onClick={this.handleClick}>Click me</button>
         <div>
           <img src={url} />
         </div>
