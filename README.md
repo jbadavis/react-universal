@@ -1,8 +1,6 @@
 # React Simple Universal
 
-This is a Universal React application template using CSS modules.
-
-I've attempted to keep it as straightforward as possible.
+This is a Universal React application.
 
 ## Getting Started
 
