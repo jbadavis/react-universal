@@ -11,8 +11,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, '../dist/public'),
-    filename: '[name].bundle.js',
-    libraryTarget: 'umd'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -50,7 +49,6 @@ module.exports = {
       filename: 'styles.bundle.css',
       allChunks: true
     }),
-    new webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
     modules: [path.resolve(__dirname, '../src'), 'node_modules']
