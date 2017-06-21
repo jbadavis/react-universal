@@ -11,8 +11,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, '../dist/public'),
-    filename: '[name].bundle.js',
-    libraryTarget: 'umd'
+    filename: '[name].bundle.js'
   },
   devServer: {
     contentBase: path.resolve(__dirname, '../dist/public'),
@@ -26,7 +25,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             babelrc: false,
-            presets: ['es2015', 'react', 'stage-0']
+            presets: ['es2015', 'react', 'stage-0', 'react-hmre']
           }
         }],
       },
@@ -57,7 +56,6 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([{ from: 'views/index.html' }]),
-    new webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
     modules: [path.resolve(__dirname, '../src'), 'node_modules']
