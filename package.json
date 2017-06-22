@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "dev": "npm start",
-    "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack/webpack.config.dev.js",
+    "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --config webpack/webpack.config.dev.js",
     "build:client": "node_modules/webpack/bin/webpack.js -p --config webpack/webpack.config.prod.js",
     "build:server": "node_modules/babel-cli/bin/babel.js src -d dist --ignore Client.js",
     "start:server": "node dist/Server.js",
