@@ -1,18 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
+const base = require('./webpack.config.base');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = {
-  context: path.resolve(__dirname, '../src'),
-  entry: {
-    app: './Client.js',
-  },
-
-  output: {
-    path: path.resolve(__dirname, '../dist/public'),
-    filename: '[name].bundle.js'
-  },
+module.exports = merge(base, {
   devServer: {
     contentBase: path.resolve(__dirname, '../dist/public'),
     historyApiFallback: true
@@ -57,8 +50,5 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([{ from: 'views/index.html' }]),
-  ],
-  resolve: {
-    modules: [path.resolve(__dirname, '../src'), 'node_modules']
-  },
-};
+  ]
+});
