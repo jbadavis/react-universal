@@ -1,0 +1,34 @@
+:local {
+  .header {
+    border-bottom: 1px solid black;
+    height: 80px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+  }
+
+  .nav {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .navLink {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .navLink:not(:last-child) {
+    padding-right: 30px;
+    position: relative;
+
+    &:after {
+      content: "|";
+      font-weight: 400;
+      position: absolute;
+      right: 10px;
+    }
+  }
+}
