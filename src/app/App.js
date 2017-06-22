@@ -1,6 +1,6 @@
 import React from 'react';
-
-import HelloWorld from './components/HelloWorld/HelloWorld';
+import Routes from './Routes';
+import Header from './components/Header/Header';
 
 import styles from '../scss/core.scss';
 
@@ -10,7 +10,10 @@ if (module.hot) {
 
 const App = () => {
   return (
-    <HelloWorld />
+    <main>
+      <Header />
+      <Routes />
+    </main>
   );
 };
 
