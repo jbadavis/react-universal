@@ -4,10 +4,6 @@ import Header from './components/Header/Header';
 
 import styles from '../scss/core.scss';
 
-if (module.hot) {
-  module.hot.accept();
-}
-
 const App = () => {
   return (
     <main>
