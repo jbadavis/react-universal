@@ -15,6 +15,9 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, '../dist/public'),
+    inline: true,
+    hot: true,
+    historyApiFallback: true
   },
   module: {
     rules: [
