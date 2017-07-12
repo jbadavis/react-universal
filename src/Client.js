@@ -9,7 +9,8 @@ import App from './app/App';
 const store = createStore(universalApp);
 
 if (module.hot) {
-  // module.hot.accept();
+  module.hot.accept('./app/App', () => require('./app/App'));
+
   module.hot.accept('./app/reducers', () => {
     const newRootReducer = require('./app/reducers');
     store.replaceReducer(newRootReducer);
