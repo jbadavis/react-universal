@@ -6,8 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import universalApp from './app/reducers';
 import App from './app/App';
 
-const store = createStore(universalApp);
-
 if (module.hot) {
   module.hot.accept('./app/App', () => require('./app/App'));
 
@@ -16,6 +14,12 @@ if (module.hot) {
     store.replaceReducer(newRootReducer);
   });
 }
+
+const preloadedState = window.__PRELOADED_STATE__;
+
+const store = createStore(universalApp, preloadedState);
+
+delete window.__PRELOADED_STATE__;
 
 render (
   <Provider store={store}>
