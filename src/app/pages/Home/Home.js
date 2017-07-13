@@ -1,5 +1,5 @@
 import React from 'react';
-import HelloWorld from '../../components/HelloWorld/HelloWorld.js';
+import HelloWorld from '../../containers/HelloWorld/HelloWorld.js';
 
 const Home = () => <HelloWorld />;
 
