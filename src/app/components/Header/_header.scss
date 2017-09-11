@@ -1,34 +1,38 @@
 :local {
   .header {
+    background-color: #2f4f4f;
     border-bottom: 1px solid black;
-    height: 80px;
-    margin-bottom: 20px;
+    height: 130px;
     position: relative;
     width: 100%;
   }
 
+  .logo,
   .nav {
     left: 50%;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+  }
+
+  .logo {
+    background: url('../../../images/logo.svg') no-repeat;
+    height: 58px;
+    width: 247px;
+    top: 20px;
+  }
+
+  .nav {
+    bottom: 10px;
   }
 
   .navLink {
-    font-weight: 600;
+    color: #fff;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   .navLink:not(:last-child) {
-    padding-right: 30px;
+    padding-right: 15px;
     position: relative;
-
-    &:after {
-      content: "|";
-      font-weight: 400;
-      position: absolute;
-      right: 10px;
-    }
   }
 }
