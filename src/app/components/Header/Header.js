@@ -9,8 +9,8 @@ const Header = () => {
         <div className={styles.logo}></div>
         <nav className={styles.nav}>
           <NavLink className={styles.navLink} exact activeClassName={styles.active} to='/'>Home</NavLink>
-          <NavLink className={styles.navLink} exact activeClassName={styles.active} to='/about'>About</NavLink>
-          <NavLink className={styles.navLink} exact activeClassName={styles.active} to='/lists'>Lists</NavLink>
+          <NavLink className={styles.navLink} activeClassName={styles.active} to='/about'>About</NavLink>
+          <NavLink className={styles.navLink} activeClassName={styles.active} to='/lists'>Lists</NavLink>
         </nav>
       </div>
   );
