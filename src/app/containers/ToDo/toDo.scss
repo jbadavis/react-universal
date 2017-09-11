@@ -9,9 +9,14 @@
     }
   }
 
-  .item {
+  .items {
+    margin: 0 auto 30px;
     max-width: 200px;
-    margin: 0 auto 10px;
+  }
+
+  .item {
+    margin-bottom: 10px;
     text-align: left;
+    word-wrap: break-word;
   }
 }

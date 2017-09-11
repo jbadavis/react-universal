@@ -12,26 +12,26 @@ class ToDo extends React.Component {
     const input = e.target.querySelector('#toDoInput');
     const val = input.value;
 
-    input.value = '';
-
     this.props.addToDoItem(val);
+
+    input.value = '';
 
     e.preventDefault();
   }
 
   render() {
     const items = this.props.items.map((item, i) => {
-      return <p className={styles.item} key={i}>{i+1} - {}</p>;
+      return <p className={styles.item} key={i}>{i+1} - {item}</p>;
     });
 
     return (
       <div className={styles.toDo}>
-        <h1>To Do</h1>
-        <div>
+        <h2>To Do</h2>
+        <div className={styles.items}>
           { items }
         </div>
+        <h3>Add To Do</h3>
         <form onSubmit={this.handleSubmit}>
-          <h3>Add To Do</h3>
           <input id="toDoInput" type="text" name="firstname" />
           <input type="submit" value="Submit" />
         </form>
