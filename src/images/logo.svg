@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="247px" height="58px" viewBox="0 0 247 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <rect id="Rectangle" fill="#EFD1C6" x="0" y="0" width="247" height="58"></rect>
+            <text id="UNIVERSAL-REACT" font-family="Lato-Black, Lato" font-size="14" font-weight="700" letter-spacing="3" fill="#000000">
+                <tspan x="38" y="29">UNIVERSAL REACT</tspan>
+            </text>
+            <path d="M101,41 L146,41" id="Line" stroke="#000000" stroke-width="1.5" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>
