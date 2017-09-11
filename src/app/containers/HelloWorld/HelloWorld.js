@@ -8,7 +8,7 @@ import url from '../../../images/toaster.svg';
 class HelloWorld extends React.Component {
   constructor(props) {
     super(props);
-  };
+  }
 
   handleClick = () => {
     this.props.setHomeTitle(this.props.title === 'Hello' ? 'Goodbye' : 'Hello');
