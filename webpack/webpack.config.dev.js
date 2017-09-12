@@ -50,6 +50,7 @@ module.exports = merge(base, {
     ],
   },
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new NunjucksWebpackPlugin({
       template: [{
         from: 'src/views/index.dev.njk',
