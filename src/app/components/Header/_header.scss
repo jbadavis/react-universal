@@ -1,7 +1,6 @@
 :local {
   .header {
     background-color: #2f4f4f;
-    border-bottom: 1px solid black;
     height: 130px;
     position: relative;
     width: 100%;
@@ -29,6 +28,14 @@
     color: #fff;
     letter-spacing: 2px;
     text-transform: uppercase;
+
+    &:active {
+      color: white;
+    }
+
+    &.active {
+      font-weight: 600;
+    }
   }
 
   .navLink:not(:last-child) {
