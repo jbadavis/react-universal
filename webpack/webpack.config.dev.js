@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const base = require('./webpack.config.base');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 
 module.exports = merge(base, {
   devServer: {
@@ -49,6 +50,11 @@ module.exports = merge(base, {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([{ from: 'views/index.html' }]),
+    new NunjucksWebpackPlugin({
+      template: [{
+        from: 'src/views/index.dev.njk',
+        to: 'index.html'
+      }]
+    })
   ]
 });
