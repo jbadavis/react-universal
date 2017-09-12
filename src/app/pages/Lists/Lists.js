@@ -1,10 +1,6 @@
 import React from 'react';
 import ToDo from '../../containers/ToDo/ToDo.js';
 
-const Lists = () => {
-  return (
-    <ToDo />
-  );
-};
+const Lists = () => <ToDo />;
 
 export default Lists;

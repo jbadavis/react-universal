@@ -1,4 +1,4 @@
-# React Simple Universal
+# React Universal
 
 This is a Universal React application.
 
