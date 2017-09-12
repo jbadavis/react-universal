@@ -10,7 +10,7 @@ class HelloWorld extends React.Component {
     super(props);
   }
 
-  handleClick = () => {
+  handleClick() {
     this.props.setHomeTitle(this.props.title === 'Hello' ? 'Goodbye' : 'Hello');
   }
 
@@ -18,7 +18,7 @@ class HelloWorld extends React.Component {
     return (
       <div className={styles.helloWorld}>
         <h1>{this.props.title}, World!</h1>
-        <button onClick={this.handleClick}>Click me</button>
+        <button onClick={() => this.handleClick()}>Click me</button>
         <div>
           <img src={url} />
         </div>
