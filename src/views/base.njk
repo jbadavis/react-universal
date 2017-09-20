@@ -1,0 +1,14 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+  {% include "./partials/head.njk" %}
+  {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    {% block main %}{% endblock %}
+    <script src="/app.bundle.js"></script>
+  </body>
+
+</html>
