@@ -1,15 +1,5 @@
-<!doctype html>
+{% extends "./base.njk" %}
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Universal Example</title>
-    {% include "./partials/head.njk" %}
-  </head>
-
-  <body>
+{% block main %}
     <div id="main"></div>
-    <script src="/app.bundle.js"></script>
-  </body>
-
-</html>
+{% endblock %}

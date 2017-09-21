@@ -1,19 +1,12 @@
-<!doctype html>
+{% extends "./base.njk" %}
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Universal Example</title>
-    {% include "./partials/head.njk" %}
+{% block head %}
     <link rel="stylesheet" href="/styles.bundle.css">
-  </head>
+{% endblock %}
 
-  <body>
+{% block main %}
     <div id="main">{{ markup }}</div>
     <script>
       window.__PRELOADED_STATE__ = {{ preloadedState }};
     </script>
-    <script src="/app.bundle.js"></script>
-  </body>
-
-</html>
+{% endblock %}

@@ -11,12 +11,43 @@
 
   .items {
     margin: 0 auto 15px;
-    max-width: 200px;
+    max-width: 300px;
+    padding: 0 30px;
   }
 
   .item {
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
+    position: relative;
     text-align: left;
     word-wrap: break-word;
+  }
+
+  .copy {
+    width: 70%;
+  }
+
+  .done,
+  .delete,
+  .undo {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .done {
+    color: green;
+  }
+
+  .delete {
+    color: red;
+  }
+
+  .undo {
+    color: purple;
   }
 }
