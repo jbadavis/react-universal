@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack.config.base');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 
 module.exports = merge(base, {
