@@ -19,7 +19,7 @@ module.exports = merge(base, {
           loader: 'babel-loader',
           options: {
             babelrc: false,
-            presets: ['es2015', 'react', 'stage-0', 'react-hmre']
+            presets: ['env', 'react', 'stage-0', 'react-hmre']
           }
         }],
       },
