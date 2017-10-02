@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "dev": "npm start",
+    "clean": "rm -r ./dist || true",
     "start": "webpack-dev-server --hot --inline --config webpack/webpack.config.dev.js",
     "build:client": "webpack -p --config webpack/webpack.config.prod.js",
     "build:server": "babel src -d dist --ignore Client.js",
@@ -37,8 +38,8 @@
     "node-sass": "^4.5.1",
     "nunjucks": "^3.0.1",
     "nunjucks-webpack-plugin": "^3.0.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16",
+    "react-dom": "^16",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.1",
