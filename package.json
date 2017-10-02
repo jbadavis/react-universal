@@ -1,5 +1,5 @@
 {
-  "name": "react-simple-universal",
+  "name": "react-universal",
   "version": "1.0.0",
   "description": "",
   "main": "",
@@ -10,11 +10,12 @@
     "build:client": "webpack -p --config webpack/webpack.config.prod.js",
     "build:server": "babel src -d dist --ignore Client.js",
     "start:server": "node dist/Server.js",
-    "build:prod": "npm run build:client && npm run build:server",
+    "build:prod": "NODE_ENV=prod && npm run clean && npm run build:client && npm run build:server",
     "prod": "npm run build:prod && npm run start:server"
   },
   "author": "jbadavis",
   "license": "ISC",
+  "repository": "jbadavis/react-universal",
   "devDependencies": {
     "babel-preset-react-hmre": "^1.1.1",
     "webpack-dev-server": "^2.4.2"
