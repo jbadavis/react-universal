@@ -14,7 +14,7 @@ module.exports = merge.smart(base, {
           loader: 'babel-loader',
           options: {
             babelrc: false,
-            presets: ['es2015', 'react', 'stage-0']
+            presets: ['env', 'react', 'stage-0']
           }
         }],
       },

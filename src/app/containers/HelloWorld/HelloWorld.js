@@ -19,9 +19,7 @@ class HelloWorld extends React.Component {
       <div className={styles.helloWorld}>
         <h1>{this.props.title}, World!</h1>
         <button onClick={() => this.handleClick()}>Click me</button>
-        <div>
-          <img src={url} />
-        </div>
+        <img src={url} />
       </div>
     );
   }
