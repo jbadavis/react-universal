@@ -19,7 +19,7 @@ module.exports = merge(base, {
           loader: 'babel-loader',
           options: {
             babelrc: false,
-            presets: ['env', 'react', 'stage-0', 'react-hmre']
+            presets: ['env', 'react', 'react-hmre']
           }
         }],
       },
@@ -51,7 +51,7 @@ module.exports = merge(base, {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new NunjucksWebpackPlugin({
-      template: [{
+      templates: [{
         from: 'src/views/index.dev.njk',
         to: 'index.html'
       }]
