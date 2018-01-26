@@ -1,10 +1,11 @@
 import React from 'React';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import Express from 'express';
 import nunjucks  from 'nunjucks';
+import thunk from 'redux-thunk';
 import universalApp from './app/reducers';
 import App from './app/App';
 
@@ -20,7 +21,7 @@ nunjucks.configure('./src/views', {
 app.use('/', Express.static('./dist/public'));
 
 app.get('*', (req, res) => {
-  const store = createStore(universalApp);
+  const store = createStore(universalApp, applyMiddleware(thunk));
 
   const markup = renderToString(
     <Provider store={store}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setHomeTitle } from '../../actions';
+import { setHomeTitle, fetchPosts } from '../../actions';
 
 import styles from './helloWorld.scss';
 import url from '../../../images/toaster.svg';
@@ -8,6 +8,8 @@ import url from '../../../images/toaster.svg';
 class HelloWorld extends React.Component {
   constructor(props) {
     super(props);
+    
+    props.getReddit();
   }
 
   handleClick() {
@@ -29,6 +31,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setHomeTitle: (title) => {
       dispatch(setHomeTitle(title));
+    },
+    getReddit: () => {
+      dispatch(fetchPosts('cats'));
     }
   };
 };

@@ -1,8 +1,9 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
+import thunk from 'redux-thunk';
 import universalApp from './app/reducers';
 import App from './app/App';
 
@@ -17,7 +18,7 @@ if (module.hot) {
 
 const preloadedState = window.__PRELOADED_STATE__;
 
-const store = createStore(universalApp, preloadedState);
+const store = createStore(universalApp, preloadedState, applyMiddleware(thunk));
 
 delete window.__PRELOADED_STATE__;
 
