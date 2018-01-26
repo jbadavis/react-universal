@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack.config.base');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = merge.smart(base, {
   module: {
@@ -37,6 +38,11 @@ module.exports = merge.smart(base, {
     ],
   },
   plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new UglifyJSPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
     new ExtractTextPlugin({
       filename: 'styles.bundle.css',
       allChunks: true

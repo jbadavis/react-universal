@@ -31,21 +31,20 @@ class ToDo extends React.Component {
 
   render() {
     const toDoItems = this.props.toDoItems.map((item, i) => (
-        <div className={styles.item} key={i}>
-          <span className={styles.copy}>{item.text}</span>
+      <div className={styles.item} key={i}>
+        <span className={styles.copy}>{item.text}</span>
 
-          <span className={item.completed ? styles.undo : styles.done}
-            id={i}
-            onClick={(e) => this.handleComplete(e)}>
-            {item.completed ? 'undo' : 'done'}
-          </span>
+        <span className={item.completed ? styles.undo : styles.done}
+          id={i}
+          onClick={(e) => this.handleComplete(e)}>
+          {item.completed ? 'undo' : 'done'}
+        </span>
 
-          <span className={styles.delete} id={i} onClick={(e) => this.handleDelete(e)}>
-            delete
-          </span>
-        </div>
-      )
-    );
+        <span className={styles.delete} id={i} onClick={(e) => this.handleDelete(e)}>
+          delete
+        </span>
+      </div>
+    ));
 
     return (
       <div className={styles.toDo}>

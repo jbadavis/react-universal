@@ -29,9 +29,13 @@ app.get('*', (req, res) => {
       </StaticRouter>
     </Provider>
   );
+  
+  const state = store.getState();
 
-  const preloadedState = JSON.stringify(store.getState());
+  state.title = process.argv[2] === '--demo' ? 'I\'m from the Server' : 'Hello';
 
+  const preloadedState = JSON.stringify(state);
+  
   return res.render('index.prod.njk', { markup, preloadedState });
 });
 
