@@ -21,7 +21,7 @@
   "devDependencies": {
     "babel-preset-react-hmre": "^1.1.1",
     "webpack-cli": "^2.0.4",
-    "webpack-dev-server": "^2.11.5"
+    "webpack-dev-server": "^3.1.11"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
